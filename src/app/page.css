@@ -1,0 +1,299 @@
+main {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+  background: var(--cool-blue-gradient);
+  color: white;
+}
+
+main > div {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: min-content;
+  grid-template-areas:
+    'header'
+    'profile'
+    'links'
+    'content'
+    'footer';
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+  max-width: 768px;
+  padding: 18px 12px;
+}
+
+.header {
+  grid-area: header;
+}
+
+.header h1 {
+  font-family: var(--font-rubik-mono-one);
+  font-size: 28px;
+  line-height: 32px;
+  letter-spacing: 1.8px;
+  text-shadow: hsla(191, 75%, 60%, 1) 1px 0 10px;
+  text-align: center;
+}
+
+.header p {
+  font-family: var(--font-marck-script);
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  text-shadow: hsla(191, 75%, 60%, 1) 1px 0 10px;
+  margin-top: -2px;
+  padding-bottom: 12px;
+  transform: rotate(-2.8deg);
+}
+
+.profile {
+  grid-area: profile;
+  display: flex;
+  justify-content: center;
+}
+
+.profile > img {
+  box-shadow: 0px 0px 12px 4px hsla(191, 75%, 60%, 0.32);
+  border-radius: 50%;
+  width: 202px;
+  height: 202px;
+}
+
+.links {
+  grid-area: links;
+  display: flex;
+  justify-content: center;
+}
+
+.links > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.links > div > a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 97.14px;
+  height: 97.14px;
+  border-radius: 14px;
+  font-family: var(--font-fira-mono);
+  font-size: 16px;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.46);
+  }
+}
+
+.links > div > a > svg {
+  width: 54px;
+  height: 54px;
+  fill: white;
+  color: white;
+}
+
+.content {
+  grid-area: content;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.content > div {
+  width: 100%;
+  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.46);
+  border-radius: 14px;
+}
+
+.content > div > p {
+  margin-bottom: 12px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer > svg {
+  width: 142px;
+  fill: white;
+}
+
+@media only screen and (min-width: 430px) {
+  main > div {
+    gap: 16px;
+    padding: 24px 16px;
+  }
+
+  .profile > img {
+    width: 224px;
+    height: 224px;
+  }
+
+  .header h1 {
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  .header p {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .content > div {
+    padding: 12px;
+  }
+
+  .footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer > svg {
+    width: 192px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  main > div {
+    grid-template-columns: 244px auto;
+    grid-template-areas:
+      'profile header'
+      'links links'
+      'content content'
+      'footer footer';
+
+    gap: 24px;
+    padding: 38px 20px;
+  }
+
+  .profile {
+    padding-left: 20px;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .content > div {
+    padding: 20px;
+  }
+
+  .footer > svg {
+    width: 256px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  main > div {
+    grid-template-columns: 276px auto;
+
+    gap: 32px;
+    padding: 48px 0;
+  }
+
+  .profile {
+    padding-left: 32px;
+  }
+
+  .profile > img {
+    width: 244px;
+    height: 244px;
+  }
+
+  .header h1 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .header p {
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  .links > div > a {
+    width: 102.85px;
+    height: 102.85px;
+    font-size: 18px;
+  }
+
+  .links > div > a > svg {
+    width: 57.48px;
+    height: 57.48px;
+  }
+
+  .content > div {
+    padding: 32px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  main > div {
+    grid-template-columns: 320px auto;
+    max-width: 844px;
+  }
+
+  .profile {
+    padding-left: 40px;
+  }
+
+  .profile > img {
+    width: 280px;
+    height: 280px;
+  }
+
+  .header h1 {
+    font-size: 40px;
+    line-height: 44px;
+  }
+
+  .header p {
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  .links > div > a {
+    width: 113.7px;
+    height: 113.7px;
+    font-size: 20px;
+  }
+
+  .links > div > a > svg {
+    width: 63.24px;
+  }
+
+  .content > div {
+    padding: 40px;
+  }
+
+  .content > div > p {
+    font-size: 24px;
+    line-height: 34px;
+    margin-bottom: 16px;
+  }
+
+  .footer > svg {
+    width: 304px;
+  }
+}

@@ -1,95 +1,76 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import Link from 'next/link';
+import Image from 'next/image';
+import SocialismIcom from '../../public/socialism.svg';
+import links from '../links';
 
-export default function Home() {
+import './page.css';
+
+const Home = () => {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main>
+      <div>
+        <div className="profile">
+          <Image
+            src="https://jacksassets.nyc3.digitaloceanspaces.com/me_with_palm_trees.sm.webp"
+            width={280}
+            height={280}
+            alt="the author"
+          />
+        </div>
+        <div className="header">
+          <div>
+            <h1>Jack Flannery</h1>
+            <p>Full Stack Web Developer</p>
+          </div>
+        </div>
+        <div className="links">
+          <div>
+            {links.map((link, index) => (
+              <Link href={link.href} key={index}>
+                <link.Component />
+                <span>{link.name}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+        <div className="content">
+          <div>
+            <p>
+              Hi, I&#39;m Jack Flannery. I&#39;m a girl dad and full stack web
+              developer. I live in New Jersey with my wife Danielle and our
+              daughter Olivia. Besides spending time with my family I enjoy
+              tinkering with computer software, and riding various boards: snow,
+              skate, wake, surf, etc. Our favorite thing to do is travel,
+              we&#39;ve spent a lot of time on the road and in the sky. Trying
+              to see as much of this earth as possible before our journey ends.
+            </p>
+            <p>
+              I&#39;m a full stack web developer at Braidio. We&#39;re making
+              some really interesting products and we use some pretty neat tools
+              like React, React Native, Redux and Ruby on Rails. I&#39;ve always
+              been drawn to computer programming I&#39;m very lucky to be able
+              to do something I enjoy for a living. Braidio is a fully remote
+              company so I can work from wherever I want. You can find me
+              working at{' '}
+              <a href="https://highlandscowork.com/">Highlands Cowork</a> or
+              maybe in that corner of my bedroom that I call my office, or
+              perhaps at some National Park inside a rental car. It&#39;s hard
+              to know for sure.
+            </p>
+            <p>
+              I&#39;m usually working on various side projects. You can find my
+              blog here. I mostly write web development tutorials on topics that
+              I&#39;m currenty working on, or any topics I&#39;m interested in
+              and don&#39;t get to work with at my day job.
+            </p>
+          </div>
+        </div>
+        <div className="footer">
+          <SocialismIcom />
         </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
     </main>
-  )
-}
+  );
+};
+
+export default Home;

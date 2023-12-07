@@ -1,0 +1,91 @@
+<svg
+  width="1200pt"
+  height="1200pt"
+  viewBox="0 0 1200 1200"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path d="m933.33 532c-32-50.668-77.332-74.668-136-61.332-58.668 13.332-89.332 53.332-97.332 113.33-9.332 1.332-20 4-28 9.332-24 14.668-34.668 42.668-29.332 70.668 5.332 26.668 28 46.668 54.668 52 4 1.332 9.332 1.332 13.332 1.332h346.67c32 0 57.332-21.332 65.332-44 13.332-38.668-12-82.668-53.332-88-6.668-1.332-10.668-4-14.668-9.332-21.332-38.668-64-57.332-106.67-46.668-5.332-1.332-10.668 0-14.668 2.668z" />
+  <path d="m996 844c-21.332-33.332-52-49.332-92-41.332-38.668 9.332-60 36-65.332 76-6.668 1.332-13.332 2.668-18.668 6.668-16 9.332-24 29.332-20 46.668 4 17.332 18.668 32 36 34.668h9.332 232c21.332 0 38.668-14.668 44-29.332 9.332-26.668-8-54.668-36-58.668-5.332 0-6.668-2.668-9.332-6.668-14.668-25.332-42.668-38.668-72-32-1.332 2.6641-4 3.9961-8 3.9961z" />
+  <path d="m344 846.67c42.668-66.668 102.67-97.332 178.67-80 77.332 17.332 117.33 70.668 128 148 13.332 1.332 25.332 5.332 37.332 13.332 30.668 20 46.668 56 38.668 92-6.668 34.668-36 61.332-70.668 68-5.332 1.332-12 1.332-17.332 1.332h-454.67c-42.668 0-74.668-28-85.332-58.668-18.668-52 14.668-108 69.332-116 9.332-1.332 13.332-4 18.668-13.332 28-50.668 84-74.668 140-61.332 5.332 2.668 12 5.332 17.332 6.668z" />
+  <path d="m516 381.33c0 82.477-66.859 149.34-149.33 149.34-82.477 0-149.34-66.859-149.34-149.34 0-82.473 66.859-149.33 149.34-149.33 82.473 0 149.33 66.859 149.33 149.33" />
+  <path
+    transform="scale(13.333)"
+    d="m27.5 7.2v7.5"
+    fill="none"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-miterlimit="10"
+    stroke-width="1.5133"
+  />
+  <path
+    transform="scale(13.333)"
+    d="m27.5 50v-7.4001"
+    fill="none"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-miterlimit="10"
+    stroke-width="1.5133"
+  />
+  <path
+    transform="scale(13.333)"
+    d="m6.2001 28.6h7.3998"
+    fill="none"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-miterlimit="10"
+    stroke-width="1.5133"
+  />
+  <path
+    transform="scale(13.333)"
+    d="m48.9 28.6h-7.4001"
+    fill="none"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-miterlimit="10"
+    stroke-width="1.5133"
+  />
+  <path
+    transform="scale(13.333)"
+    d="m12.4 13.5 5.3001 5.3001"
+    fill="none"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-miterlimit="10"
+    stroke-width="1.5133"
+  />
+  <path
+    transform="scale(13.333)"
+    d="m42.6 43.7-5.1999-5.2002"
+    fill="none"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-miterlimit="10"
+    stroke-width="1.5133"
+  />
+  <path
+    transform="scale(13.333)"
+    d="m12.4 43.7 5.3001-5.2002"
+    fill="none"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-miterlimit="10"
+    stroke-width="1.5133"
+  />
+  <path
+    transform="scale(13.333)"
+    d="m42.6 13.5-5.1999 5.3001"
+    fill="none"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-miterlimit="10"
+    stroke-width="1.5133"
+  />
+</svg>
