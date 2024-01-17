@@ -1,13 +1,15 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import {MDXRemote} from 'next-mdx-remote/rsc';
+
 import SocialismIcom from '../../public/socialism.svg';
 import links from '../links';
+import urls from '../urls';
 
 import './page.css';
 
 const getProfile = async () => {
-  const res = await fetch(process.env.API_URL);
+  const res = await fetch(urls.root);
 
   if (!res.ok) {
     throw new Error('Failed to fetch Profile');
