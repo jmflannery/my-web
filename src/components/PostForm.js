@@ -1,7 +1,7 @@
 'use client';
 
 import {useRouter} from 'next/navigation';
-import urls from '../../../../../urls';
+import urls from '../urls';
 
 import './PostForm.css';
 
@@ -35,15 +35,15 @@ const PostForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="form-control">
+      <div className="formControl">
         <label htmlFor="title">Title</label>
         <input type="text" name="title" />
       </div>
-      <div className="form-control">
+      <div className="formControl">
         <label htmlFor="slug">Slug</label>
         <input type="text" name="slug" />
       </div>
-      <div className="form-control">
+      <div className="formControl">
         <label htmlFor="body">Body</label>
         <textarea name="body" rows="50" cols="100" />
       </div>

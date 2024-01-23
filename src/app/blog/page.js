@@ -12,7 +12,7 @@ const getPosts = async () => {
 
 const Blog = async () => {
   const posts = await getPosts();
-  return <main>Weblog</main>;
+  return 'Weblog';
 };
 
 export default Blog;

@@ -22,8 +22,8 @@ const Home = async () => {
   const profile = await getProfile();
 
   return (
-    <main>
-      <div>
+    <div className="home">
+      <main>
         <div className="profile">
           <Image
             src="https://jacksassets.nyc3.digitaloceanspaces.com/me_with_palm_trees.sm.webp"
@@ -56,8 +56,8 @@ const Home = async () => {
         <div className="footer">
           <SocialismIcom />
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
   );
 };
 

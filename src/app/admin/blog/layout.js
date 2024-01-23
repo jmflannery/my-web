@@ -1,3 +1,4 @@
+import Authorized from '@/components/Authorized';
 import Blog from '@/components/Blog';
 import urls from '@/urls';
 
@@ -11,14 +12,16 @@ const getProfile = async () => {
   return res.json();
 };
 
-const BlogLayout = async ({children}) => {
+const AdminBlogLayout = async ({children}) => {
   const profile = await getProfile();
 
   return (
-    <div className="page">
-      <Blog profile={profile}>{children}</Blog>
-    </div>
+    <Authorized>
+      <div className="page">
+        <Blog profile={profile}>{children}</Blog>
+      </div>
+    </Authorized>
   );
 };
 
-export default BlogLayout;
+export default AdminBlogLayout;
