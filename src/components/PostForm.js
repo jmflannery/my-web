@@ -1,51 +1,52 @@
-'use client';
-
-import {useRouter} from 'next/navigation';
-import urls from '../urls';
-
+import {redirect} from 'next/navigation';
+import {createPost, updatePost} from '@/actions/posts';
 import './PostForm.css';
 
-const createPost = async (title, slug, body) => {
-  const res = await fetch(urls.posts, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    credentials: 'include',
-    body: JSON.stringify({title, slug, body}),
-  });
+const PostForm = ({post}) => {
+  const tempPost = post || {title: '', slug: '', body: ''};
 
-  if (!res.ok) {
-    throw new Error('Failed to POST Post');
-  }
+  const handleSubmit = async formData => {
+    'use server';
 
-  return res.json();
-};
+    let res;
+    if (tempPost?.id) {
+      res = await updatePost(formData, tempPost.id);
+    } else {
+      res = await createPost(formData);
+    }
 
-const PostForm = () => {
-  const router = useRouter();
-
-  const handleSubmit = async event => {
-    const title = event.target[0].value;
-    const slug = event.target[1].value;
-    const body = event.target[2].value;
-    const post = await createPost(title, slug, body);
-    router.push(`/blog/posts/${post.slug}`);
+    redirect(`/admin/blog/posts/${res.slug}`);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form action={handleSubmit}>
       <div className="formControl">
         <label htmlFor="title">Title</label>
-        <input type="text" name="title" />
+        <input
+          type="text"
+          name="title"
+          placeholder="title"
+          defaultValue={tempPost.title}
+        />
       </div>
       <div className="formControl">
         <label htmlFor="slug">Slug</label>
-        <input type="text" name="slug" />
+        <input
+          type="text"
+          name="slug"
+          placeholder="Slug"
+          defaultValue={tempPost.slug}
+        />
       </div>
       <div className="formControl">
         <label htmlFor="body">Body</label>
-        <textarea name="body" rows="50" cols="100" />
+        <textarea
+          name="body"
+          placeholder="Body"
+          rows="50"
+          cols="65"
+          defaultValue={tempPost.body}
+        />
       </div>
       <input type="submit" />
     </form>

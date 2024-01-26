@@ -2,45 +2,58 @@
   width: 100%;
   height: 100%;
   max-width: var(--max-page-width);
-}
 
-header {
-  padding: 12px;
+  & > header {
+    padding: 12px;
+  }
+
+  main {
+    padding: 0 12px;
+  }
 }
 
 header > nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 4px;
-  font-family: var(--font-fira-mono);
-  font-size: 14px;
-  line-height: 22px;
-  text-align: center;
-  /* vertical-align: middle; */
-  text-shadow: rgba(0, 0, 0, 0.2) 1px 1px 2px;
-  letter-spacing: 2px;
-}
-
-header > nav svg {
-  width: 44px;
-  height: 44px;
-  fill: rgb(var(--one-red-rgb));
 }
 
 header > nav > * {
-  flex-grow: 1;
-  text-align: left;
-  vertical-align: middle;
+  &:first-child {
+    svg {
+      width: 32px;
+      height: 32px;
+      fill: rgb(var(--one-red-rgb));
+    }
+  }
 
   &:nth-child(2) {
-    flex-grow: 0;
-    font-family: var(--font-rubik-mono-one);
-    color: var(--one-blue);
-    font-size: 18px;
-    letter-spacing: 1.6px;
-    text-align: center;
-    text-shadow: rgba(var(--one-blue-rgb), 0.4) 1px 1px 5px;
+    a {
+      font-family: var(--font-rubik-mono-one);
+      color: var(--one-blue);
+      font-size: 22px;
+      line-height: 22px;
+      letter-spacing: normal;
+      text-align: center;
+      text-shadow: rgba(var(--one-blue-rgb), 0.4) 1px 1px 5px;
+    }
+
+    p {
+      font-family: var(--font-marck-script);
+      color: rgb(var(--one-red-rgb));
+      font-size: 18px;
+      line-height: 18px;
+      text-align: center;
+      text-shadow: rgba(0, 0, 0, 0.2) 1px 1px 2px;
+      letter-spacing: 1.4px;
+      margin-top: -2px;
+      transform: rotate(-5deg);
+    }
+  }
+
+  &:last-child {
+    height: 32px;
+    width: 32px;
   }
 }
 
@@ -51,57 +64,139 @@ footer {
 }
 
 @media only screen and (min-width: 430px) {
-  header {
-    padding: 16px;
-  }
+  .blog {
+    & > header {
+      padding: 16px;
+    }
 
-  header > nav {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 2.2px;
-    gap: 6px;
-  }
-
-  header > nav svg {
-    width: 48px;
-    height: 48px;
+    main {
+      padding: 0 16px;
+    }
   }
 
   header > nav > * {
+    &:first-child {
+      svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
     &:nth-child(2) {
-      font-size: 20px;
-      letter-spacing: 1.8px;
+      a {
+        font-size: 26px;
+        line-height: 26px;
+      }
+
+      p {
+        font-size: 22px;
+        line-height: 22px;
+      }
+    }
+
+    &:last-child {
+      height: 40px;
+      width: 40px;
     }
   }
 }
 
 @media only screen and (min-width: 768px) {
-  header {
-    padding: 24px;
-  }
+  .blog {
+    & > header {
+      padding: 24px 16px;
+    }
 
-  header > nav {
-    font-size: 18px;
-    line-height: 32px;
-    letter-spacing: 2.4px;
-    gap: 12px;
-  }
-
-  header > nav svg {
-    width: 64px;
-    height: 64px;
+    main {
+      padding: 0 16px;
+    }
   }
 
   header > nav > * {
+    &:first-child {
+      svg {
+        width: 64px;
+        height: 64px;
+      }
+    }
+
     &:nth-child(2) {
-      font-size: 28px;
-      letter-spacing: 2px;
+      a {
+        font-size: 32px;
+        line-height: 32px;
+      }
+
+      p {
+        font-size: 26px;
+        line-height: 26px;
+      }
+    }
+
+    &:last-child {
+      height: 64px;
+      width: 64px;
     }
   }
 }
 
 @media only screen and (min-width: 992px) {
+  .blog {
+    & > header {
+      padding: 32px 16px;
+    }
+  }
+
+  header > nav > * {
+    &:first-child {
+      svg {
+        width: 72px;
+        height: 72px;
+      }
+    }
+
+    &:nth-child(2) {
+      a {
+        font-size: 34px;
+        line-height: 34px;
+      }
+
+      p {
+        font-size: 28px;
+        line-height: 28px;
+      }
+    }
+
+    &:last-child {
+      height: 72px;
+      width: 72px;
+    }
+  }
 }
 
 @media only screen and (min-width: 1280px) {
+  header > nav > * {
+    &:first-child {
+      svg {
+        width: 88px;
+        height: 88px;
+      }
+    }
+
+    &:nth-child(2) {
+      a {
+        font-size: 38px;
+        line-height: 38px;
+      }
+
+      p {
+        font-size: 32px;
+        line-height: 32px;
+      }
+    }
+
+    &:last-child {
+      height: 88px;
+      width: 88px;
+    }
+  }
 }

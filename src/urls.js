@@ -4,7 +4,7 @@ const urls = {
   root: baseUrl,
   sessions: `${baseUrl}/sessions`,
   posts: `${baseUrl}/posts`,
-  post: slug => `${baseUrl}/posts/${slug}`,
+  post: id => `${baseUrl}/posts/${id}`,
 };
 
 export default urls;

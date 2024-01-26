@@ -1,15 +1,10 @@
 import {
-  Song_Myung,
+  Source_Serif_4,
   Fira_Mono,
-  Marck_Script,
+  Fira_Sans,
   Rubik_Mono_One,
+  Marck_Script,
 } from 'next/font/google';
-
-export const songMyung = Song_Myung({
-  variable: '--font-song-myung',
-  weight: '400',
-  subsets: ['latin'],
-});
 
 export const firaMono = Fira_Mono({
   variable: '--font-fira-mono',
@@ -26,5 +21,17 @@ export const marckScript = Marck_Script({
 export const rubikMonoOne = Rubik_Mono_One({
   variable: '--font-rubik-mono-one',
   weight: '400',
+  subsets: ['latin'],
+});
+
+export const sourceSerif4 = Source_Serif_4({
+  variable: '--font-source-serif-4',
+  weight: '400',
+  subsets: ['latin'],
+});
+
+export const firaSans = Fira_Sans({
+  variable: '--font-fira-sans',
+  weight: '700',
   subsets: ['latin'],
 });

@@ -1,9 +1,16 @@
 import {fetchPosts} from '@/actions/posts';
+import PostListItem from '@/components/PostListItem';
 
 const AdminBlogPostsPage = async () => {
   const posts = await fetchPosts();
 
-  return <div>Admin Posts Page</div>;
+  return (
+    <>
+      {posts.map(post => {
+        return <PostListItem post={post} key={post.id} admin />;
+      })}
+    </>
+  );
 };
 
 export default AdminBlogPostsPage;
