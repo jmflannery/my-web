@@ -10,9 +10,9 @@ const getPosts = async () => {
   return res.json();
 };
 
-const Blog = async () => {
+const BlogPage = async () => {
   const posts = await getPosts();
   return 'Weblog';
 };
 
-export default Blog;
+export default BlogPage;

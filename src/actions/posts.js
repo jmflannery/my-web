@@ -3,15 +3,15 @@
 import {cookies} from 'next/headers';
 import urls from '@/urls';
 
-export const fetchPosts = async () => {
-  const key = cookies().get('api_key')?.value;
+const headers = (admin = false) => ({
+  'Content-Type': 'application/json',
+  ...(admin && {Authorization: `Bearer ${cookies().get('api_key')?.value}`}),
+});
 
+export const fetchPosts = async (admin = false) => {
   const res = await fetch(urls.posts, {
     method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${key}`,
-    },
+    headers: headers(admin),
     credentials: 'include',
   });
 
@@ -22,15 +22,10 @@ export const fetchPosts = async () => {
   return res.json();
 };
 
-export const fetchPost = async postId => {
-  const key = cookies().get('api_key')?.value;
-
+export const fetchPost = async (postId, admin = false) => {
   const res = await fetch(urls.post(postId), {
     method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${key}`,
-    },
+    headers: headers(admin),
     credentials: 'include',
   });
 
@@ -52,10 +47,7 @@ const formDataToJson = formData => {
 export const createPost = async formData => {
   const res = await fetch(urls.posts, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${cookies().get('api_key')?.value}`,
-    },
+    headers: headers(true),
     body: formDataToJson(formData),
     credentials: 'include',
   });
@@ -70,10 +62,7 @@ export const createPost = async formData => {
 export const updatePost = async (formData, id) => {
   const res = await fetch(urls.post(id), {
     method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${cookies().get('api_key')?.value}`,
-    },
+    headers: headers(true),
     body: formDataToJson(formData),
     credentials: 'include',
   });

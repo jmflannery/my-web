@@ -2,7 +2,7 @@ import {fetchPosts} from '@/actions/posts';
 import PostListItem from '@/components/PostListItem';
 
 const AdminBlogPostsPage = async () => {
-  const posts = await fetchPosts();
+  const posts = await fetchPosts(true);
 
   return (
     <>

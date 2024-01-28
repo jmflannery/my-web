@@ -1,19 +1,16 @@
-import urls from '@/urls';
+import {fetchPosts} from '@/actions/posts';
+import PostListItem from '@/components/PostListItem';
 
-const fetchPosts = async () => {
-  const res = await fetch(urls.posts);
-
-  if (!res.ok) {
-    throw new Error('Failed to fetch Posts');
-  }
-
-  return res.json();
-};
-
-const Posts = async () => {
+const PostsPage = async () => {
   const posts = await fetchPosts();
 
-  return <div>My Posts!</div>;
+  return (
+    <>
+      {posts.map(post => {
+        return <PostListItem post={post} key={post.id} admin />;
+      })}
+    </>
+  );
 };
 
-export default Posts;
+export default PostsPage;
