@@ -4,18 +4,18 @@ article {
     line-height: 24px;
     margin-bottom: 24px;
 
-    svg {
-      width: 36px;
-      height: 36px;
-      fill: rgb(var(--one-green-rgb));
-    }
-
-    div {
+    .meta {
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 8px;
       margin-top: 20px;
+
+      svg {
+        width: 36px;
+        height: 36px;
+        fill: rgb(var(--one-green-rgb));
+      }
 
       span:first-of-type {
         color: rgb(var(--one-red-rgb));
@@ -39,10 +39,11 @@ article {
       line-height: 24px;
       margin-bottom: 24px;
 
-      svg {
-        width: 36px;
-        height: 36px;
-        fill: rgb(var(--one-green-rgb));
+      .meta {
+        svg {
+          width: 42px;
+          height: 42px;
+        }
       }
     }
   }

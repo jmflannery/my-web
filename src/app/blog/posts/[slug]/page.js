@@ -16,7 +16,7 @@ const PostPage = async ({params: {slug}}) => {
     notFound(slug);
   }
 
-  return <Post post={post} admin={true} />;
+  return <Post post={post} />;
 };
 
 export default PostPage;

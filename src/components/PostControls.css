@@ -1,0 +1,22 @@
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+
+  svg {
+    width: 42px;
+    height: 42px;
+  }
+
+  a:first-child {
+    fill: var(--one-green);
+  }
+
+  a:nth-child(2) {
+    fill: var(--one-blue);
+  }
+
+  a:last-child {
+    fill: var(--one-red);
+  }
+}

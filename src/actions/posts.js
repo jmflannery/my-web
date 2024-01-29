@@ -1,6 +1,7 @@
 'use server';
 
 import {cookies} from 'next/headers';
+import {redirect} from 'next/navigation';
 import urls from '@/urls';
 
 const headers = (admin = false) => ({
@@ -22,8 +23,8 @@ export const fetchPosts = async (admin = false) => {
   return res.json();
 };
 
-export const fetchPost = async (postId, admin = false) => {
-  const res = await fetch(urls.post(postId), {
+export const fetchPost = async (id, admin = false) => {
+  const res = await fetch(urls.post(id), {
     method: 'GET',
     headers: headers(admin),
     credentials: 'include',
@@ -53,7 +54,7 @@ export const createPost = async formData => {
   });
 
   if (!res.ok) {
-    throw new Error('Failed to POST Post');
+    throw new Error('Failed to create Post');
   }
 
   return res.json();
@@ -68,8 +69,51 @@ export const updatePost = async (formData, id) => {
   });
 
   if (!res.ok) {
-    throw new Error('Failed to PUT Post');
+    throw new Error('Failed to update Post');
   }
 
   return res.json();
+};
+
+export const publishPost = async post => {
+  console.log(urls.publishPost(post.id));
+  const res = await fetch(urls.publishPost(post.id), {
+    method: 'PUT',
+    headers: headers(true),
+    credentials: 'include',
+  });
+
+  if (!res.ok) {
+    throw new Error('Failed to publish Post');
+  }
+
+  redirect(`/admin/blog/posts/${post.slug}`);
+};
+
+export const unpublishPost = async post => {
+  const res = await fetch(urls.unpublishPost(post.id), {
+    method: 'PUT',
+    headers: headers(true),
+    credentials: 'include',
+  });
+
+  if (!res.ok) {
+    throw new Error('Failed to publish Post');
+  }
+
+  redirect(`/admin/blog/posts/${post.slug}`);
+};
+
+export const deletePost = async post => {
+  const res = await fetch(urls.post(post.id), {
+    method: 'DELETE',
+    headers: headers(true),
+    credentials: 'include',
+  });
+
+  if (!res.ok) {
+    throw new Error('Failed to delete Post');
+  }
+
+  redirect('/admin/blog/posts');
 };
