@@ -11,7 +11,7 @@ const parseAuthorizationToken = headers => {
 };
 
 const auth = async (email, password) => {
-  const res = await fetch(urls.sessions, {
+  const res = await fetch(urls.api.sessions, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -28,7 +28,6 @@ const auth = async (email, password) => {
 };
 
 export const authenticate = async formData => {
-  console.log('Authenticate Action!!');
   const email = formData.get('email');
   const password = formData.get('password');
   const apiKey = await auth(email, password);
@@ -40,7 +39,7 @@ export const authenticate = async formData => {
     path: '/',
   });
 
-  redirect('/admin/blog');
+  redirect(urls.web.admin.blog);
 };
 
 export const authorize = () => {
@@ -48,5 +47,5 @@ export const authorize = () => {
     return;
   }
 
-  redirect('/admin');
+  redirect(urls.web.admin.root);
 };

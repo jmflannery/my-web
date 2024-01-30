@@ -1,21 +1,23 @@
 import {redirect} from 'next/navigation';
 import {createPost, updatePost} from '@/actions/posts';
+import urls from '@/urls';
+
 import './PostForm.css';
 
 const PostForm = ({post}) => {
-  const tempPost = post || {title: '', slug: '', body: ''};
+  const formPost = post || {title: '', slug: '', body: ''};
 
   const handleSubmit = async formData => {
     'use server';
 
     let res;
-    if (tempPost?.id) {
-      res = await updatePost(formData, tempPost.id);
+    if (formPost?.id) {
+      res = await updatePost(formData, formPost.id);
     } else {
       res = await createPost(formData);
     }
 
-    redirect(`/admin/blog/posts/${res.slug}`);
+    redirect(urls.web.admin.blog.post(res.slug));
   };
 
   return (
@@ -26,7 +28,7 @@ const PostForm = ({post}) => {
           type="text"
           name="title"
           placeholder="title"
-          defaultValue={tempPost.title}
+          defaultValue={formPost.title}
         />
       </div>
       <div className="formControl">
@@ -35,7 +37,7 @@ const PostForm = ({post}) => {
           type="text"
           name="slug"
           placeholder="Slug"
-          defaultValue={tempPost.slug}
+          defaultValue={formPost.slug}
         />
       </div>
       <div className="formControl">
@@ -45,7 +47,7 @@ const PostForm = ({post}) => {
           placeholder="Body"
           rows="50"
           cols="65"
-          defaultValue={tempPost.body}
+          defaultValue={formPost.body}
         />
       </div>
       <input type="submit" />

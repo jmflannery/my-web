@@ -1,10 +1,12 @@
 'use client';
 
 import Link from 'next/link';
+
 import EditIcon from '@/../public/edit.svg';
 import PublishIcon from '@/../public/publish.svg';
 import TrashIcon from '@/../public/trash.svg';
 import {publishPost, unpublishPost, deletePost} from '@/actions/posts';
+import urls from '@/urls';
 
 import './PostControls.css';
 
@@ -19,7 +21,7 @@ const PostControls = ({post}) => {
 
   const handleDelete = async () => {
     if (confirm(`Do you really want to delete this Post: ${post.title}?`)) {
-      await deletePost(post);
+      await deletePost(post, urls.web.admin.blog.posts);
     }
   };
 

@@ -1,7 +1,7 @@
 import urls from '../../urls';
 
 const getPosts = async () => {
-  const res = await fetch(urls.posts);
+  const res = await fetch(urls.api.posts);
 
   if (!res.ok) {
     throw new Error('Failed to fetch Profile');

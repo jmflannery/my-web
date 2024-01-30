@@ -2,6 +2,7 @@
 
 import {cookies} from 'next/headers';
 import {redirect} from 'next/navigation';
+import {revalidatePath} from 'next/cache';
 import urls from '@/urls';
 
 const headers = (admin = false) => ({
@@ -10,7 +11,7 @@ const headers = (admin = false) => ({
 });
 
 export const fetchPosts = async (admin = false) => {
-  const res = await fetch(urls.posts, {
+  const res = await fetch(urls.api.posts, {
     method: 'GET',
     headers: headers(admin),
     credentials: 'include',
@@ -24,14 +25,13 @@ export const fetchPosts = async (admin = false) => {
 };
 
 export const fetchPost = async (id, admin = false) => {
-  const res = await fetch(urls.post(id), {
+  const res = await fetch(urls.api.post(id), {
     method: 'GET',
     headers: headers(admin),
     credentials: 'include',
   });
 
   if (!res.ok) {
-    // throw new Error('Failed to fetch Post');
     return null;
   }
 
@@ -46,7 +46,7 @@ const formDataToJson = formData => {
 };
 
 export const createPost = async formData => {
-  const res = await fetch(urls.posts, {
+  const res = await fetch(urls.api.posts, {
     method: 'POST',
     headers: headers(true),
     body: formDataToJson(formData),
@@ -57,11 +57,11 @@ export const createPost = async formData => {
     throw new Error('Failed to create Post');
   }
 
-  return res.json();
+  return await res.json();
 };
 
 export const updatePost = async (formData, id) => {
-  const res = await fetch(urls.post(id), {
+  const res = await fetch(urls.api.post(id), {
     method: 'PUT',
     headers: headers(true),
     body: formDataToJson(formData),
@@ -72,12 +72,11 @@ export const updatePost = async (formData, id) => {
     throw new Error('Failed to update Post');
   }
 
-  return res.json();
+  return await res.json();
 };
 
 export const publishPost = async post => {
-  console.log(urls.publishPost(post.id));
-  const res = await fetch(urls.publishPost(post.id), {
+  const res = await fetch(urls.api.publishPost(post.id), {
     method: 'PUT',
     headers: headers(true),
     credentials: 'include',
@@ -87,11 +86,14 @@ export const publishPost = async post => {
     throw new Error('Failed to publish Post');
   }
 
-  redirect(`/admin/blog/posts/${post.slug}`);
+  revalidatePath(urls.web.blog.posts);
+  revalidatePath(urls.web.blog.post(post.slug));
+  revalidatePath(urls.web.admin.blog.posts);
+  revalidatePath(urls.web.admin.blog.post(post.slug));
 };
 
 export const unpublishPost = async post => {
-  const res = await fetch(urls.unpublishPost(post.id), {
+  const res = await fetch(urls.api.unpublishPost(post.id), {
     method: 'PUT',
     headers: headers(true),
     credentials: 'include',
@@ -101,11 +103,14 @@ export const unpublishPost = async post => {
     throw new Error('Failed to publish Post');
   }
 
-  redirect(`/admin/blog/posts/${post.slug}`);
+  revalidatePath(urls.web.blog.posts);
+  revalidatePath(urls.web.blog.post(post.slug));
+  revalidatePath(urls.web.admin.blog.posts);
+  revalidatePath(urls.web.admin.blog.post(post.slug));
 };
 
-export const deletePost = async post => {
-  const res = await fetch(urls.post(post.id), {
+export const deletePost = async (post, redirectPath) => {
+  const res = await fetch(urls.api.post(post.id), {
     method: 'DELETE',
     headers: headers(true),
     credentials: 'include',
@@ -115,5 +120,12 @@ export const deletePost = async post => {
     throw new Error('Failed to delete Post');
   }
 
-  redirect('/admin/blog/posts');
+  if (post.published_at) {
+    revalidatePath(urls.web.blog.posts);
+    revalidatePath(urls.web.blog.post(post.slug));
+  }
+
+  if (redirectPath) {
+    redirect(redirectPath);
+  }
 };

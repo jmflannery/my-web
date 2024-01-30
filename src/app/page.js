@@ -9,7 +9,7 @@ import urls from '../urls';
 import './page.css';
 
 const getProfile = async () => {
-  const res = await fetch(urls.root);
+  const res = await fetch(urls.api.root);
 
   if (!res.ok) {
     throw new Error('Failed to fetch Profile');
