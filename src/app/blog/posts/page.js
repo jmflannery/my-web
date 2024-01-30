@@ -1,16 +1,10 @@
 import {fetchPosts} from '@/actions/posts';
-import PostListItem from '@/components/PostListItem';
+import PostsList from '@/components/PostsList';
 
-const PostsPage = async () => {
+const BlogPostsPage = async () => {
   const posts = await fetchPosts();
 
-  return (
-    <ul className="posts">
-      {posts.map(post => {
-        return <PostListItem post={post} key={post.id} />;
-      })}
-    </ul>
-  );
+  return <PostsList posts={posts} />;
 };
 
-export default PostsPage;
+export default BlogPostsPage;

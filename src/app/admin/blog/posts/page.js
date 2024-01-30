@@ -1,18 +1,10 @@
 import {fetchPosts} from '@/actions/posts';
-import PostListItem from '@/components/PostListItem';
-
-import './page.css';
+import PostsList from '@/components/PostsList';
 
 const AdminBlogPostsPage = async () => {
   const posts = await fetchPosts(true);
 
-  return (
-    <ul className="posts">
-      {posts.map(post => {
-        return <PostListItem post={post} key={post.id} admin />;
-      })}
-    </ul>
-  );
+  return <PostsList posts={posts} />;
 };
 
 export default AdminBlogPostsPage;
