@@ -38,6 +38,11 @@ export const fetchPost = async (id, admin = false) => {
   return res.json();
 };
 
+export const fetchLatestPost = async () => {
+  const posts = await fetchPosts();
+  return posts?.[posts.length - 1];
+};
+
 const formDataToJson = formData => {
   const title = formData.get('title');
   const slug = formData.get('slug');
