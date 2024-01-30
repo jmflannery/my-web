@@ -10,6 +10,9 @@ article {
       align-items: center;
       gap: 4px;
       margin-top: 20px;
+      font-family: var(--font-fira-mono);
+      font-size: 14px;
+      letter-spacing: 0.4px;
 
       svg {
         width: 36px;
