@@ -5,11 +5,11 @@ const PostsPage = async () => {
   const posts = await fetchPosts();
 
   return (
-    <>
+    <ul className="posts">
       {posts.map(post => {
-        return <PostListItem post={post} key={post.id} admin />;
+        return <PostListItem post={post} key={post.id} />;
       })}
-    </>
+    </ul>
   );
 };
 

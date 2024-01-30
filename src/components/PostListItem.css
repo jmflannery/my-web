@@ -1,0 +1,13 @@
+li {
+  padding: 6px;
+  border-bottom: 1px solid var(--one-navy-blue);
+
+  span {
+    font-family: var(--font-fira-mono);
+  }
+
+  p {
+    margin: 0;
+    font-family: var(--font-fira-sans);
+  }
+}

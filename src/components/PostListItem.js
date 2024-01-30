@@ -1,5 +1,8 @@
 import Link from 'next/link';
 import PropTypes from 'prop-types';
+import PostTime from '@/components/PostTime';
+
+import './PostListItem.css';
 
 const postPath = (post, admin) => {
   const basePath = `${admin ? '/admin' : ''}/blog/posts`;
@@ -8,9 +11,12 @@ const postPath = (post, admin) => {
 
 const PostListItem = ({post, admin}) => {
   return (
-    <Link href={postPath(post, admin)}>
-      <p>{post.title}</p>
-    </Link>
+    <li className="postItem">
+      <Link href={postPath(post, admin)}>
+        <PostTime post={post} />
+        <p>{post.title}</p>
+      </Link>
+    </li>
   );
 };
 

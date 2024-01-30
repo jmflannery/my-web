@@ -8,7 +8,7 @@ article {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 8px;
+      gap: 4px;
       margin-top: 20px;
 
       svg {
@@ -17,7 +17,7 @@ article {
         fill: rgb(var(--one-green-rgb));
       }
 
-      span:first-of-type {
+      em {
         color: rgb(var(--one-red-rgb));
         font-family: var(--font-marck-script);
         font-size: 20px;
