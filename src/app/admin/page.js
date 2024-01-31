@@ -9,10 +9,10 @@ const AdminPage = () => {
   }
 
   return (
-    <>
+    <div className="page">
       <h1>Sign in</h1>
       <AuthForm />
-    </>
+    </div>
   );
 };
 

@@ -2,14 +2,16 @@
 
 import {authenticate} from '@/actions/authentication';
 
+import './AuthForm.css';
+
 const AuthForm = () => {
   return (
-    <form action={authenticate}>
-      <div className="form-control">
+    <form action={authenticate} className="authForm">
+      <div className="formControl">
         <label htmlFor="email">Email</label>
         <input type="email" name="email" placeholder="email" />
       </div>
-      <div className="form-control">
+      <div className="formControl">
         <label htmlFor="password">Password</label>
         <input type="password" name="password" placeholder="password" />
       </div>

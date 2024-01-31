@@ -39,7 +39,7 @@ export const authenticate = async formData => {
     path: '/',
   });
 
-  redirect(urls.web.admin.blog);
+  redirect(urls.web.admin.blog.root);
 };
 
 export const authorize = () => {
