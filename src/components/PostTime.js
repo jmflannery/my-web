@@ -1,12 +1,10 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import {format} from 'date-fns';
 
-const PostTime = ({post, placeholder, dateFormat}) =>
+import FormattedDate from './FormattedDate';
+
+const PostTime = ({post, placeholder, formatString}) =>
   post.published_at ? (
-    <time dateTime={post.updated_at}>
-      {format(new Date(post.published_at), dateFormat)}
-    </time>
+    <FormattedDate dateString={post.published_at} formatString={formatString} />
   ) : (
     <span>{placeholder}</span>
   );
@@ -18,7 +16,7 @@ PostTime.propTypes = {
 
 PostTime.defaultProps = {
   placeholder: 'Unpublished',
-  dateFormat: 'yyyy MMMM do',
+  formatString: 'yyyy MMMM do',
 };
 
 export default PostTime;

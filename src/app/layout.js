@@ -1,6 +1,6 @@
 import './globals.css';
 import {
-  sourceSerif4,
+  sourceSerif,
   firaMono,
   firaSans,
   rubikMonoOne,
@@ -18,7 +18,7 @@ const RootLayout = ({children}) => {
     <html lang="en">
       <body
         className={classNames(
-          sourceSerif4.variable,
+          sourceSerif.variable,
           firaMono.variable,
           firaSans.variable,
           rubikMonoOne.variable,

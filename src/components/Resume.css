@@ -1,0 +1,133 @@
+.resume {
+  width: 100%;
+  height: 100%;
+  max-width: var(--max-page-width);
+  font-size: 16px;
+  line-height: 26px;
+
+  a {
+    color: var(--one-blue);
+    text-decoration: underline;
+  }
+
+  h2 {
+    padding-bottom: 4px;
+  }
+
+  ul {
+    padding-left: 12px;
+  }
+
+  header {
+    padding: 12px;
+
+    p {
+      margin: 0;
+      text-align: center;
+      line-height: 22px;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+
+      &:first-of-type {
+        span {
+          text-align: center;
+
+          &:nth-child(2) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  main {
+    padding: 0 12px;
+  }
+
+  h2 {
+    color: var(--one-blue);
+    border-bottom: 1px solid grey;
+    margin-bottom: 12px;
+  }
+
+  footer {
+    height: 24px;
+  }
+
+  .skills {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .work {
+    margin-bottom: 18px;
+    page-break-inside: avoid;
+
+    div:first-child {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-weight: bold;
+      }
+
+      span:nth-child(1) {
+        order: 2;
+      }
+      span:nth-child(2) {
+        order: 1;
+      }
+      span:nth-child(3) {
+        order: 3;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .resume {
+    header {
+      div {
+        gap: 10px;
+        flex-direction: row;
+
+        &:first-of-type {
+          justify-content: center;
+
+          span:nth-child(2) {
+            display: inline;
+          }
+        }
+
+        &:last-of-type {
+          justify-content: space-between;
+        }
+      }
+    }
+
+    .work {
+      margin-bottom: 18px;
+
+      div:first-child {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        span:nth-child(1) {
+          order: 1;
+        }
+        span:nth-child(2) {
+          order: 2;
+        }
+        span:nth-child(3) {
+          order: 3;
+        }
+      }
+    }
+  }
+}

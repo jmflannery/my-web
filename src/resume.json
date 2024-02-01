@@ -1,0 +1,69 @@
+{
+  "name": "Jack Flannery",
+  "title": "Full Stack Web Developer",
+  "location": "Highlands, NJ",
+  "email": "hello@jackflannery.com",
+  "website": "jackflannery.com",
+  "skills": [
+    "Ruby",
+    "Ruby on Rails",
+    "Javascript",
+    "React",
+    "Redux",
+    "NextJS",
+    "HTML",
+    "CSS",
+    "PostgreSQL",
+    "MySQL",
+    "SQL",
+    "API",
+    "REST",
+    "Capistrano",
+    "Linux",
+    "Ubuntu",
+    "Unit Testing",
+    "Jest",
+    "Minitest",
+    "Rspec",
+    "Cypress"
+  ],
+  "experience": [
+    {
+      "company": "Braidio",
+      "location": "Remote",
+      "title": "Senior Software Developer",
+      "started_on": "2014-09-01T09:00:00",
+      "ended_on": "Present",
+      "bullets": [
+        "Responsible for implementing features according to Figma designs, including the frontend UI using React and CSS as well as all the needed backend work including database schema design and API endpoint creation using Ruby on Rails.",
+        "Implemented scheduling and appointment booking system designed for small businesses that allowed business users to interact with a calendar with a calendar to view and edit their own availability and view client appointments, and for clients to view a business’s availability and book appointments.",
+        "Implemented a system of customizable forms that allowed business users to create forms and flows that can be tailored to specific business needs including for making intake forms for Veterinary Offices that allow clients to fill out forms and schedule appointments, and business users to view and edit client information."
+      ]
+    },
+    {
+      "company": "NJ Transit Rail Operations",
+      "location": "Newark, NJ",
+      "title": "System Engineer",
+      "started_on": "2012-02-01T09:00:00",
+      "ended_on": "2014-09-01T17:00:00",
+      "bullets": [
+        "Responsible for the operation, maintenance and upgrades of NJ Transit’s real time train control software system: TMAC (Train Management and Control System)"
+      ]
+    },
+    {
+      "company": "Arinc",
+      "location": "Marina del Rey, CA",
+      "title": "Staff Software Engineer",
+      "started_on": "2008-06-01T09:00:00",
+      "ended_on": "2012-02-01T17:00:00",
+      "bullets": [
+        "Member of the software development team that delivered new train control software and hardware to Amtrak NEC (Northeast Corridor) and Amtrak Chicago, and NJ Transit, replacing older systems.",
+        "Responsible for implementing client specific features using C and Java.",
+        "Responsible for modeling devices in the field as database schema and control software.",
+        "Performed on site acceptance testing with client.",
+        "Provided on site training for all users of the system."
+      ]
+    }
+  ],
+  "education": ["Ramapo College of New Jersey"]
+}

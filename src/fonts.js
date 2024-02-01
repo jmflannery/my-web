@@ -24,9 +24,10 @@ export const rubikMonoOne = Rubik_Mono_One({
   subsets: ['latin'],
 });
 
-export const sourceSerif4 = Source_Serif_4({
-  variable: '--font-source-serif-4',
-  weight: '400',
+export const sourceSerif = Source_Serif_4({
+  variable: '--font-source-serif',
+  weight: ['400', '700'],
+  style: ['normal', 'italic'],
   subsets: ['latin'],
 });
 
