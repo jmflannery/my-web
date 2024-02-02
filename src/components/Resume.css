@@ -164,6 +164,8 @@
     }
 
     header {
+      padding: 0 12px 12px 24px;
+
       div {
         gap: 10px;
         flex-direction: row;
@@ -219,6 +221,10 @@
       font-size: 24px;
       line-height: 28px;
       margin-top: 24px;
+    }
+
+    header {
+      padding: 28px 12px;
     }
   }
 }
