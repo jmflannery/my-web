@@ -7,6 +7,8 @@
   "skills": [
     "Ruby",
     "Ruby on Rails",
+    "API",
+    "REST",
     "Javascript",
     "React",
     "Redux",
@@ -16,8 +18,6 @@
     "PostgreSQL",
     "MySQL",
     "SQL",
-    "API",
-    "REST",
     "Capistrano",
     "Linux",
     "Ubuntu",
@@ -35,9 +35,21 @@
       "started_on": "2014-09-01T09:00:00",
       "ended_on": "Present",
       "bullets": [
-        "Responsible for implementing features according to Figma designs, including the frontend UI using React and CSS as well as all the needed backend work including database schema design and API endpoint creation using Ruby on Rails.",
-        "Implemented scheduling and appointment booking system designed for small businesses that allowed business users to interact with a calendar with a calendar to view and edit their own availability and view client appointments, and for clients to view a business’s availability and book appointments.",
-        "Implemented a system of customizable forms that allowed business users to create forms and flows that can be tailored to specific business needs including for making intake forms for Veterinary Offices that allow clients to fill out forms and schedule appointments, and business users to view and edit client information."
+        "Implemented features based on Figma designs, handling both frontend UI development using React and CSS, and backend tasks, including crafting API endpoints using Ruby on Rails.",
+        "Developed a user-friendly scheduling and appointment booking system customized for small businesses, enabling business users to efficiently manage their availability on a calendar and allowing clients to easily view business schedules and book appointments.",
+        "Designed and implemented a dynamic system of customizable forms, empowering business users to create tailored forms and workflows for specific business requirements, such as creating intake forms for Veterinary Offices that facilitate client information submission and appointment scheduling, while also providing business users with the ability to view and edit client details."
+      ]
+    },
+    {
+      "company": "Humble Humans",
+      "location": "Asbury Park, NJ",
+      "title": "Senior Software Developer",
+      "started_on": "2016-09-01T09:00:00",
+      "ended_on": "2021-10-01T17:00:00",
+      "bullets": [
+        "Collaborated with Coldwell Banker to implement a dynamic property listing search bar on ColdwellBanker.com, leveraging AngularJS for enhanced functionality and an improved user experience.",
+        "Teamed up with UBS to create an interactive web-based experience, using React for frontend development and Firebase for a dynamic user experience.",
+        "Developed and implemented a data processing pipeline for Ozmosi using Ruby and AWS services (Redshift, S3, and EC2). This pipeline efficiently processed clinical trials data from multiple countries, enabling comprehensive analysis. The system contributed to pharmaceutical forecasting, industry collaboration, and expedited drug development by providing clean, categorized, and indexed datasets, allowing for customized reports and visualizations to inform strategic decision-making."
       ]
     },
     {
@@ -47,7 +59,7 @@
       "started_on": "2012-02-01T09:00:00",
       "ended_on": "2014-09-01T17:00:00",
       "bullets": [
-        "Responsible for the operation, maintenance and upgrades of NJ Transit’s real time train control software system: TMAC (Train Management and Control System)"
+        "Managed the operation, maintenance, and upgrades of NJ Transit's real-time train control software system: TMAC (Train Management and Control System)."
       ]
     },
     {
@@ -57,11 +69,11 @@
       "started_on": "2008-06-01T09:00:00",
       "ended_on": "2012-02-01T17:00:00",
       "bullets": [
-        "Member of the software development team that delivered new train control software and hardware to Amtrak NEC (Northeast Corridor) and Amtrak Chicago, and NJ Transit, replacing older systems.",
-        "Responsible for implementing client specific features using C and Java.",
-        "Responsible for modeling devices in the field as database schema and control software.",
-        "Performed on site acceptance testing with client.",
-        "Provided on site training for all users of the system."
+        "Contributed as a member of the software development team that successfully delivered new train control software and hardware to Amtrak NEC (Northeast Corridor), Amtrak Chicago, and NJ Transit, replacing outdated systems.",
+        "Implemented new features using C and Java tailored for each client.",
+        "Led the modeling of field devices as a database schema and implemented control software.",
+        "Conducted on-site acceptance testing with clients.",
+        "Delivered on-site training sessions for all system users."
       ]
     }
   ],

@@ -15,12 +15,8 @@ const Resume = ({resume}) => {
           <span>{resume.location}</span>
         </div>
         <div>
-          <p>
-            <Link href={`mailto:${resume.email}`}>{resume.email}</Link>
-          </p>
-          <p>
-            <Link href="/">{resume.website}</Link>
-          </p>
+          <Link href={`mailto:${resume.email}`}>{resume.email}</Link>
+          <Link href="/">{resume.website}</Link>
         </div>
       </header>
       <main>

@@ -6,12 +6,23 @@
   line-height: 26px;
 
   a {
+    font-family: var(--font-fira-mono);
     color: var(--one-blue);
     text-decoration: underline;
   }
 
+  h1 {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
   h2 {
-    padding-bottom: 4px;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--one-blue);
+    padding: 0 0 4px 0;
+    border-bottom: 1px solid var(--dark-grey);
+    margin: 20px 0 12px 0;
   }
 
   ul {
@@ -19,12 +30,12 @@
   }
 
   header {
-    padding: 12px;
+    padding: 24px 12px;
 
+    a,
     p {
       margin: 0;
       text-align: center;
-      line-height: 22px;
     }
 
     div {
@@ -47,12 +58,6 @@
     padding: 0 12px;
   }
 
-  h2 {
-    color: var(--one-blue);
-    border-bottom: 1px solid grey;
-    margin-bottom: 12px;
-  }
-
   footer {
     height: 24px;
   }
@@ -66,7 +71,6 @@
 
   .work {
     margin-bottom: 18px;
-    page-break-inside: avoid;
 
     div:first-child {
       display: flex;
@@ -78,6 +82,7 @@
 
       span:nth-child(1) {
         order: 2;
+        color: var(--dark-grey);
       }
       span:nth-child(2) {
         order: 1;
@@ -91,6 +96,73 @@
 
 @media only screen and (min-width: 768px) {
   .resume {
+    h1 {
+      font-size: 28px;
+      line-height: 32px;
+    }
+
+    h2 {
+      font-size: 22px;
+      line-height: 26px;
+      padding: 0 0 6px 0;
+      margin: 22px 0 14px 0;
+    }
+
+    header {
+      div {
+        flex-direction: row;
+        gap: 10px;
+
+        &:first-of-type {
+          justify-content: center;
+
+          span:nth-child(2) {
+            display: inline;
+          }
+        }
+
+        &:last-of-type {
+          justify-content: space-between;
+        }
+      }
+    }
+
+    .work {
+      margin-bottom: 24px;
+
+      div:first-child {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        span:nth-child(1) {
+          order: 1;
+          color: #000;
+        }
+        span:nth-child(2) {
+          order: 2;
+        }
+        span:nth-child(3) {
+          order: 3;
+        }
+      }
+    }
+  }
+}
+
+@media print {
+  .resume {
+    h1 {
+      font-size: 26px;
+      line-height: 30px;
+    }
+
+    h2 {
+      font-size: 20px;
+      line-height: 24px;
+      margin-top: 16px;
+    }
+
     header {
       div {
         gap: 10px;
@@ -111,7 +183,8 @@
     }
 
     .work {
-      margin-bottom: 18px;
+      page-break-inside: avoid;
+      margin-bottom: 14px;
 
       div:first-child {
         display: flex;
@@ -128,6 +201,24 @@
           order: 3;
         }
       }
+    }
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .resume {
+    font-size: 18px;
+    line-height: 28px;
+
+    h1 {
+      font-size: 32px;
+      line-height: 36px;
+    }
+
+    h2 {
+      font-size: 24px;
+      line-height: 28px;
+      margin-top: 24px;
     }
   }
 }
