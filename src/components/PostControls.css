@@ -8,15 +8,21 @@
     height: 42px;
   }
 
+  button {
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+  }
+
   a:first-child {
     fill: var(--one-green);
   }
 
-  a:nth-child(2) {
+  button:nth-child(2) {
     fill: var(--one-blue);
   }
 
-  a:last-child {
+  button:last-child {
     fill: var(--one-red);
   }
 }

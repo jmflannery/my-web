@@ -30,12 +30,12 @@ const PostControls = ({post}) => {
       <Link href={`/admin/blog/posts/${post.slug}/edit`}>
         <EditIcon />
       </Link>
-      <a onClick={handlePublished}>
+      <button onClick={handlePublished}>
         <PublishIcon />
-      </a>
-      <a onClick={handleDelete}>
+      </button>
+      <button onClick={handleDelete}>
         <TrashIcon />
-      </a>
+      </button>
     </div>
   );
 };

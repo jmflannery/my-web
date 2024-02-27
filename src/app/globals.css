@@ -56,7 +56,7 @@ article {
 }
 
 a {
-  color: inherit;
+  color: var(--one-blue);
   text-decoration: none;
 }
 
