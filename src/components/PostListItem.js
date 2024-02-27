@@ -13,8 +13,8 @@ const PostListItem = ({post, admin}) => {
   return (
     <li className="postItem">
       <Link href={postPath(post, admin)}>
-        <PostTime post={post} />
         <p>{post.title}</p>
+        <PostTime post={post} />
       </Link>
     </li>
   );
