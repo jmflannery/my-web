@@ -104,6 +104,10 @@ p {
   text-rendering: optimizeLegibility;
 }
 
+p > a {
+  text-decoration: underline;
+}
+
 h1 + p,
 h2 + p,
 h3 + p,
