@@ -28,8 +28,6 @@
   --background-rgb: 255, 255, 255;
 
   --max-page-width: 768px;
-
-  box-sizing: border-box;
 }
 
 * {

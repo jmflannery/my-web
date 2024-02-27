@@ -1,4 +1,19 @@
 .home {
+  --min-main-width: 320px;
+  --main-margin-x: 12px;
+  --main-margin-y: 18px;
+  --links-gap: 8px;
+  --links-per-line: 3;
+
+  --link-size: calc(
+    (
+        var(--min-main-width) - var(--main-margin-x) * 2 -
+          ((var(--links-per-line) - 1) * var(--links-gap))
+      ) / var(--links-per-line)
+  );
+
+  --link-svg-size: calc(var(--link-size) * 0.6);
+
   display: flex;
   justify-content: center;
   width: 100vw;
@@ -6,6 +21,10 @@
   min-height: 100vh;
   color: white;
   background: var(--cool-blue-gradient);
+}
+
+.home a {
+  color: white;
 }
 
 .home > main {
@@ -22,7 +41,7 @@
   width: 100%;
   height: 100%;
   max-width: 768px;
-  padding: 18px 12px;
+  margin: var(--main-margin-y) var(--main-margin-x);
 }
 
 .header {
@@ -66,37 +85,32 @@
   grid-area: links;
   display: flex;
   justify-content: center;
-}
-
-.links > div {
-  display: flex;
-  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: var(--links-gap);
 }
 
-.links > div > a {
+.links > a {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 8px;
-  width: 97.14px;
-  height: 97.14px;
+  gap: 4px;
+  width: var(--link-size);
+  height: var(--link-size);
   border-radius: 14px;
   font-family: var(--font-fira-mono);
   font-size: 16px;
-  color: white;
+  line-height: 20px;
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.46);
   }
 }
 
-.links > div > a > svg {
-  width: 54px;
-  height: 54px;
+.links > a > svg {
+  width: var(--link-svg-size);
+  height: var(--link-svg-size);
   fill: white;
   color: white;
 }
@@ -141,9 +155,15 @@
 }
 
 @media only screen and (min-width: 430px) {
+  .home {
+    --min-main-width: 430px;
+    --main-margin-x: 16px;
+    --main-margin-y: 24px;
+    --links-per-line: 4;
+  }
+
   .home > main {
     gap: 16px;
-    padding: 24px 16px;
   }
 
   .profile > img {
@@ -178,6 +198,13 @@
 }
 
 @media only screen and (min-width: 768px) {
+  .home {
+    --min-main-width: 768px;
+    --main-margin-x: 20px;
+    --main-margin-y: 38px;
+    --links-per-line: 5;
+  }
+
   .home > main {
     grid-template-columns: 244px auto;
     grid-template-areas:
@@ -187,7 +214,6 @@
       'footer footer';
 
     gap: 24px;
-    padding: 38px 20px;
   }
 
   .profile {
@@ -201,6 +227,11 @@
     justify-content: center;
   }
 
+  .links > a {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
   .content > div {
     padding: 20px;
   }
@@ -211,11 +242,14 @@
 }
 
 @media only screen and (min-width: 992px) {
+  .home {
+    --main-margin-x: 0px;
+    --main-margin-y: 48px;
+  }
+
   .home > main {
     grid-template-columns: 276px auto;
-
     gap: 32px;
-    padding: 48px 0;
   }
 
   .profile {
@@ -237,15 +271,9 @@
     line-height: 32px;
   }
 
-  .links > div > a {
-    width: 102.85px;
-    height: 102.85px;
-    font-size: 18px;
-  }
-
-  .links > div > a > svg {
-    width: 57.48px;
-    height: 57.48px;
+  .links > a {
+    font-size: 20px;
+    line-height: 24px;
   }
 
   .content > div {
@@ -254,9 +282,13 @@
 }
 
 @media only screen and (min-width: 1280px) {
+  .home {
+    --min-main-width: 844px;
+  }
+
   .home > main {
     grid-template-columns: 320px auto;
-    max-width: 844px;
+    max-width: var(--min-main-width);
   }
 
   .profile {
@@ -278,14 +310,9 @@
     line-height: 36px;
   }
 
-  .links > div > a {
-    width: 113.7px;
-    height: 113.7px;
-    font-size: 20px;
-  }
-
-  .links > div > a > svg {
-    width: 63.24px;
+  .links > a {
+    font-size: 22px;
+    line-height: 26px;
   }
 
   .content > div {

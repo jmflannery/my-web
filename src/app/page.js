@@ -39,14 +39,16 @@ const Home = async () => {
           </div>
         </div>
         <div className="links">
-          <div>
-            {links.map((link, index) => (
-              <Link href={link.href} key={index}>
-                <link.Component />
-                <span>{link.name}</span>
-              </Link>
-            ))}
-          </div>
+          {links.map(({href, name, Component}, index) => (
+            <Link
+              href={href}
+              key={index}
+              target={href.startsWith('http') ? '_blank' : '_self'}
+            >
+              <Component />
+              <span>{name}</span>
+            </Link>
+          ))}
         </div>
         <div className="content">
           <div>

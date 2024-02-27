@@ -8,7 +8,7 @@ import {
 
 export const firaMono = Fira_Mono({
   variable: '--font-fira-mono',
-  weight: '400',
+  weight: ['400', '700'],
   subsets: ['latin'],
 });
 

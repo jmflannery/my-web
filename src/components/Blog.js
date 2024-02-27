@@ -8,11 +8,13 @@ const Blog = ({profile, children}) => {
     <div className="blog">
       <header>
         <nav>
-          <Link href="/blog">
+          <Link href="/">
             <CoffeeCodeIcon />
           </Link>
           <div>
-            <Link href="/">{profile.name}</Link>
+            <Link href="/blog">
+              <p>The Alchemist Dev</p>
+            </Link>
             <p>Weblog</p>
           </div>
           <span></span>

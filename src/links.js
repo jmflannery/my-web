@@ -1,5 +1,8 @@
 import RoboBlogIcon from '../public/robo-blog.svg';
+import ResumeIcon from '../public/resume.svg';
 import GithubIcon from '../public/github.svg';
+import DevIcon from '../public/dev.svg';
+import LinkedInIcon from '../public/linked-in.svg';
 import BlueSkyIcon from '../public/bluesky.svg';
 import ThreadsIcon from '../public/threads.svg';
 import SloppyFacebookIcon from '../public/sloppy-facebook.svg';
@@ -13,9 +16,24 @@ const links = [
     Component: RoboBlogIcon,
   },
   {
+    name: 'Resume',
+    href: '/resume',
+    Component: ResumeIcon,
+  },
+  {
     name: 'Github',
     href: 'https://github.com/jmflannery',
     Component: GithubIcon,
+  },
+  {
+    name: 'Dev.to',
+    href: 'https://dev.to/jackf',
+    Component: DevIcon,
+  },
+  {
+    name: 'Linked In',
+    href: 'https://www.linkedin.com/in/jack-flannery-a6bb5b26/',
+    Component: LinkedInIcon,
   },
   {
     name: 'Bluesky',
