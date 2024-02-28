@@ -2,17 +2,12 @@
   --blog-margin-x: 12px;
   --blog-margin-y: 12px;
 
-  --blog-header-icon-size: 32px;
+  --blog-header-img-size: 42px;
 
-  --blog-title-font-size: 20px;
-  --blog-title-font-weight: 700;
-  --blog-title-line-height: 1.1;
-  --blog-title-letter-spacing: 1px;
-
-  --blog-description-font-size: 18px;
-  --blog-description-font-weight: 400;
-  --blog-description-line-height: 1;
-  --blog-description-letter-spacing: 1.4px;
+  --blog-title-font-size: 28px;
+  --blog-title-font-weight: 400;
+  --blog-title-line-height: 1;
+  --blog-title-letter-spacing: 1.8px;
 
   --blog-footer-font-size: 14px;
   --blog-footer-font-weight: 400;
@@ -31,42 +26,33 @@
   align-items: center;
 }
 
-.blog > header > nav > a svg {
-  width: var(--blog-header-icon-size);
-  height: var(--blog-header-icon-size);
-  fill: rgb(var(--one-red-rgb));
+.blog > header > nav > a:first-child > img {
+  width: var(--blog-header-img-size);
+  height: var(--blog-header-img-size);
+  border-radius: 50%;
 }
 
-.blog > header > nav > div {
-  text-align: center;
-}
-
-.blog > header > nav > div > a > p {
-  font-family: var(--font-fira-mono);
-  color: var(--one-blue);
+.blog > header > nav > a:nth-child(2) > p {
+  transform: rotate(-8deg);
+  font-family: var(--font-marck-script);
   font-size: var(--blog-title-font-size);
   font-weight: var(--blog-title-font-weight);
   line-height: var(--blog-title-line-height);
   letter-spacing: var(--blog-title-letter-spacing);
-  text-shadow: rgba(var(--one-blue-rgb), 0.4) 1px 1px 5px;
+  color: var(--one-blue);
   margin: 0;
 }
 
-.blog > header > nav > div > p {
-  font-family: var(--font-marck-script);
-  color: rgb(var(--one-red-rgb));
-  font-size: var(--blog-description-font-size);
-  font-weight: var(--blog-description-font-weight);
-  line-height: var(--blog-description-line-height);
-  letter-spacing: var(--blog-description-letter-spacing);
-  text-shadow: rgba(0, 0, 0, 0.2) 1px 1px 2px;
-  margin: 0;
-  transform: rotate(-5deg);
+.blog > header > nav > a:nth-child(2) > p > span:last-child {
+  color: var(--one-red);
+  text-decoration: underline;
+  margin-left: 4px;
 }
 
-.blog > header > nav > span {
-  height: 32px;
-  width: 32px;
+.blog > header > nav > a:last-child > svg {
+  width: var(--blog-header-img-size);
+  height: var(--blog-header-img-size);
+  fill: rgb(var(--one-red-rgb));
 }
 
 .blog > footer {
@@ -82,12 +68,9 @@
     --blog-margin-x: 16px;
     --blog-margin-y: 16px;
 
-    --blog-header-icon-size: 40px;
+    --blog-header-img-size: 56px;
 
-    --blog-title-font-size: 26px;
-    --blog-title-letter-spacing: 1.2px;
-
-    --blog-description-font-size: 22px;
+    --blog-title-font-size: 32px;
 
     --blog-footer-font-size: 16px;
 
@@ -99,13 +82,9 @@
   .blog {
     --blog-margin-y: 24px;
 
-    --blog-header-icon-size: 64px;
+    --blog-header-img-size: 72px;
 
-    --blog-title-font-size: 32px;
-    --blog-title-letter-spacing: 2.4px;
-
-    --blog-description-font-size: 26px;
-    --blog-description-letter-spacing: 1.6px;
+    --blog-title-font-size: 38px;
 
     --blog-footer-font-size: 18px;
 
@@ -115,13 +94,11 @@
 
 @media only screen and (min-width: 992px) {
   .blog {
-    --blog-margin-y: 24px;
+    --blog-margin-y: 28px;
 
-    --blog-header-icon-size: 72px;
+    --blog-header-img-size: 96px;
 
-    --blog-title-font-size: 34px;
-
-    --blog-description-font-size: 28px;
+    --blog-title-font-size: 42px;
 
     --blog-footer-font-size: 20px;
 
@@ -131,12 +108,12 @@
 
 @media only screen and (min-width: 1280px) {
   .blog {
-    --blog-margin-y: 24px;
+    --blog-margin-y: 32px;
 
-    --blog-header-icon-size: 88px;
+    --blog-header-img-size: 112px;
 
-    --blog-title-font-size: 38px;
+    --blog-title-font-size: 48px;
 
-    --blog-description-font-size: 32px;
+    --blog-footer-font-size: 22px;
   }
 }
