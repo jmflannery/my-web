@@ -16,8 +16,9 @@
 
   --blog-footer-margin: 32px 0;
 
-  margin: var(--blog-margin-y) var(--blog-margin-x);
+  width: 100%;
   max-width: var(--max-page-width);
+  margin: var(--blog-margin-y) var(--blog-margin-x);
 }
 
 .blog > header > nav {
