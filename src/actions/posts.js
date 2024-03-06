@@ -46,8 +46,9 @@ export const fetchLatestPost = async () => {
 const formDataToJson = formData => {
   const title = formData.get('title');
   const slug = formData.get('slug');
+  const description = formData.get('description');
   const body = formData.get('body');
-  return JSON.stringify({title, slug, body});
+  return JSON.stringify({title, slug, description, body});
 };
 
 export const createPost = async formData => {

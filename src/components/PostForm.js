@@ -5,7 +5,7 @@ import urls from '@/urls';
 import './PostForm.css';
 
 const PostForm = ({post}) => {
-  const formPost = post || {title: '', slug: '', body: ''};
+  const formPost = post || {title: '', slug: '', description: '', body: ''};
 
   const handleSubmit = async formData => {
     'use server';
@@ -38,6 +38,15 @@ const PostForm = ({post}) => {
           name="slug"
           placeholder="Slug"
           defaultValue={formPost.slug}
+        />
+      </div>
+      <div className="formControl">
+        <label htmlFor="title">Description</label>
+        <input
+          type="text"
+          name="description"
+          placeholder="description"
+          defaultValue={formPost?.description}
         />
       </div>
       <div className="formControl">

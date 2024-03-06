@@ -14,6 +14,7 @@ const Post = ({post, admin}) => {
       <header>
         <PostsBackLink admin={admin} />
         <h1>{post.title}</h1>
+        {post.description && <h2>{post.description}</h2>}
         <div className="meta">
           <FeatherIcon />
           <PostTime post={post} />
