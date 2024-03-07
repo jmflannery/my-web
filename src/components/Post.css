@@ -1,54 +1,58 @@
 article {
-  header {
-    font-size: 16px;
-    line-height: 24px;
-    margin-bottom: 24px;
+  --meta-flex-direction: column;
+  --meta-justify-content: flex-start;
+  --meta-align-items: center;
+  --meta-icon-size: 36px;
+  --meta-p-font-size: 14px;
+  --meta-em-font-size: 18px;
+}
 
-    .meta {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 4px;
-      margin-top: 20px;
-      font-family: var(--font-fira-mono);
-      font-size: 14px;
-      letter-spacing: 0.4px;
+article > header > .meta {
+  display: flex;
+  flex-direction: var(--meta-flex-direction);
+  justify-content: var(--meta-justify-content);
+  align-items: var(--meta-align-items);
+  margin: var(--h2-margin);
+}
 
-      svg {
-        width: 36px;
-        height: 36px;
-        fill: rgb(var(--one-green-rgb));
-      }
+article > header > .meta p {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-fira-mono);
+  font-size: var(--meta-p-font-size);
+  letter-spacing: 0.5px;
+  margin: 0;
+}
 
-      em {
-        color: rgb(var(--one-red-rgb));
-        font-family: var(--font-marck-script);
-        font-size: 20px;
-        text-shadow: rgba(var(--one-red-rgb), 0.4) 0px 0px 20px;
-      }
-    }
-  }
+article > header > .meta svg {
+  width: var(--meta-icon-size);
+  height: var(--meta-icon-size);
+  fill: rgb(var(--one-green-rgb));
+  margin-right: -2px;
+}
+
+article > header > .meta em {
+  margin-right: 2px;
+  font-family: var(--font-marck-script);
+  font-size: var(--meta-em-font-size);
+  color: rgb(var(--one-red-rgb));
+  text-shadow: rgba(var(--one-red-rgb), 0.4) 0px 0px 20px;
 }
 
 @media only screen and (min-width: 430px) {
+  article {
+    --meta-flex-direction: row;
+    --meta-justify-content: center;
+    --meta-p-font-size: 16px;
+    --meta-em-font-size: 20px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
   article {
-    padding: 16px;
-
-    header {
-      font-size: 16px;
-      line-height: 24px;
-      margin-bottom: 24px;
-
-      .meta {
-        svg {
-          width: 42px;
-          height: 42px;
-        }
-      }
-    }
+    --meta-icon-size: 42px;
+    --meta-p-font-size: 18px;
+    --meta-em-font-size: 22px;
   }
 }
 
@@ -56,4 +60,9 @@ article {
 }
 
 @media only screen and (min-width: 1280px) {
+  article {
+    --meta-icon-size: 48px;
+    --meta-p-font-size: 18px;
+    --meta-em-font-size: 24px;
+  }
 }

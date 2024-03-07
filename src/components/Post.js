@@ -16,11 +16,13 @@ const Post = ({post, admin}) => {
         <h1>{post.title}</h1>
         {post.description && <h2>{post.description}</h2>}
         <div className="meta">
-          <FeatherIcon />
-          <PostTime post={post} />
-          <span>
-            <em>by</em> Jack Flannery
-          </span>
+          <p>
+            <em>by</em>Jack Flannery
+          </p>
+          <p>
+            <FeatherIcon />
+            <PostTime post={post} />
+          </p>
         </div>
         {admin && <PostControls post={post} />}
       </header>

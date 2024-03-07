@@ -1,5 +1,5 @@
 .blog {
-  --blog-margin-x: 12px;
+  --blog-margin-x: 6px;
   --blog-margin-y: 12px;
 
   --blog-header-img-size: 42px;
@@ -16,7 +16,7 @@
 
   --blog-footer-margin: 32px 0;
 
-  width: 100%;
+  width: calc(100% - calc(var(--blog-margin-x) * 2));
   max-width: var(--max-page-width);
   margin: var(--blog-margin-y) var(--blog-margin-x);
 }
@@ -66,7 +66,7 @@
 
 @media only screen and (min-width: 430px) {
   .blog {
-    --blog-margin-x: 16px;
+    --blog-margin-x: 12px;
     --blog-margin-y: 16px;
 
     --blog-header-img-size: 56px;
@@ -81,6 +81,7 @@
 
 @media only screen and (min-width: 768px) {
   .blog {
+    --blog-margin-x: 16px;
     --blog-margin-y: 24px;
 
     --blog-header-img-size: 72px;

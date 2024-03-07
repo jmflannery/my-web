@@ -33,6 +33,6 @@ export const sourceSerif = Source_Serif_4({
 
 export const firaSans = Fira_Sans({
   variable: '--font-fira-sans',
-  weight: '700',
+  weight: ['200', '700'],
   subsets: ['latin'],
 });
