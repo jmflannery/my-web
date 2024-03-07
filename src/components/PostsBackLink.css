@@ -4,22 +4,22 @@
   width: fit-content;
   padding: 4px 12px;
   border-radius: 16px;
+}
 
-  &:hover,
-  &:active {
-    background-color: rgb(var(--one-yellow-rgb), 0.2);
-  }
+.postsBack:hover,
+.postsBack:active {
+  background-color: rgb(var(--one-yellow-rgb), 0.2);
+}
 
-  p {
-    font-family: var(--font-fira-mono);
-    font-size: 12px;
-    line-height: 28px;
-    margin: 0;
-  }
+.postsBack p {
+  font-family: var(--font-fira-mono);
+  font-size: 12px;
+  line-height: 28px;
+  margin: 0;
+}
 
-  svg {
-    width: 28px;
-    height: 28px;
-    fill: var(--one-yellow);
-  }
+.postsBack svg {
+  width: 28px;
+  height: 28px;
+  fill: var(--one-yellow);
 }
