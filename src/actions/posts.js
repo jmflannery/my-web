@@ -40,7 +40,7 @@ export const fetchPost = async (id, admin = false) => {
 
 export const fetchLatestPost = async () => {
   const posts = await fetchPosts();
-  return posts?.[posts.length - 1];
+  return posts?.[0];
 };
 
 const formDataToJson = formData => {
