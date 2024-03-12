@@ -5,6 +5,21 @@ import {redirect} from 'next/navigation';
 import {revalidatePath} from 'next/cache';
 import urls from '@/urls';
 
+const blogPaths = slug => [
+  urls.web.blog.root,
+  urls.web.blog.posts,
+  urls.web.blog.post(slug),
+];
+
+const adminBlogPaths = slug => [
+  urls.web.admin.blog.root,
+  urls.web.admin.blog.posts,
+  urls.web.admin.blog.post(slug),
+];
+
+const revalidateBlogPaths = paths =>
+  paths.forEach(path => revalidatePath(path));
+
 const headers = (admin = false) => ({
   'Content-Type': 'application/json',
   ...(admin && {Authorization: `Bearer ${cookies().get('api_key')?.value}`}),
@@ -63,7 +78,10 @@ export const createPost = async formData => {
     throw new Error('Failed to create Post');
   }
 
-  return await res.json();
+  const post = await res.json();
+  revalidateBlogPaths(adminBlogPaths(post.slug));
+
+  return post;
 };
 
 export const updatePost = async (formData, id) => {
@@ -78,7 +96,13 @@ export const updatePost = async (formData, id) => {
     throw new Error('Failed to update Post');
   }
 
-  return await res.json();
+  const post = await res.json();
+  revalidateBlogPaths(adminBlogPaths(post.slug));
+  if (post.published_at) {
+    revalidateBlogPaths(blogPaths(post.slug));
+  }
+
+  return post;
 };
 
 export const publishPost = async post => {
@@ -92,11 +116,8 @@ export const publishPost = async post => {
     throw new Error('Failed to publish Post');
   }
 
-  revalidatePath(urls.web.blog);
-  revalidatePath(urls.web.blog.posts);
-  revalidatePath(urls.web.blog.post(post.slug));
-  revalidatePath(urls.web.admin.blog.posts);
-  revalidatePath(urls.web.admin.blog.post(post.slug));
+  revalidateBlogPaths(blogPaths(post.slug));
+  revalidateBlogPaths(adminBlogPaths(post.slug));
 };
 
 export const unpublishPost = async post => {
@@ -110,11 +131,8 @@ export const unpublishPost = async post => {
     throw new Error('Failed to publish Post');
   }
 
-  revalidatePath(urls.web.blog);
-  revalidatePath(urls.web.blog.posts);
-  revalidatePath(urls.web.blog.post(post.slug));
-  revalidatePath(urls.web.admin.blog.posts);
-  revalidatePath(urls.web.admin.blog.post(post.slug));
+  revalidateBlogPaths(blogPaths(post.slug));
+  revalidateBlogPaths(adminBlogPaths(post.slug));
 };
 
 export const deletePost = async (post, redirectPath) => {
@@ -128,9 +146,9 @@ export const deletePost = async (post, redirectPath) => {
     throw new Error('Failed to delete Post');
   }
 
+  revalidateBlogPaths(adminBlogPaths(post.slug));
   if (post.published_at) {
-    revalidatePath(urls.web.blog.posts);
-    revalidatePath(urls.web.blog.post(post.slug));
+    revalidateBlogPaths(blogPaths(post.slug));
   }
 
   if (redirectPath) {
