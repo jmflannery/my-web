@@ -92,6 +92,7 @@ export const publishPost = async post => {
     throw new Error('Failed to publish Post');
   }
 
+  revalidatePath(urls.web.blog);
   revalidatePath(urls.web.blog.posts);
   revalidatePath(urls.web.blog.post(post.slug));
   revalidatePath(urls.web.admin.blog.posts);
@@ -109,6 +110,7 @@ export const unpublishPost = async post => {
     throw new Error('Failed to publish Post');
   }
 
+  revalidatePath(urls.web.blog);
   revalidatePath(urls.web.blog.posts);
   revalidatePath(urls.web.blog.post(post.slug));
   revalidatePath(urls.web.admin.blog.posts);
